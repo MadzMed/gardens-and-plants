@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get 'gardens/show'
+  get 'gardens/index'
+  resources :gardens, only: [:show, :index] do
+    resources :plants, only: [:create, :destroy]
+  end
 end
