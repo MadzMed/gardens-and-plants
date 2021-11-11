@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_10_162019) do
+ActiveRecord::Schema.define(version: 2021_11_11_141947) do
 
   create_table "garden_plants", force: :cascade do |t|
     t.integer "plant_id", null: false
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2021_11_10_162019) do
     t.string "origin"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "photo"
   end
 
   add_foreign_key "garden_plants", "gardens"

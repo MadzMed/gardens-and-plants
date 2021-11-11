@@ -2,13 +2,13 @@ $color-purple: $info;
 
 .navbar-lewagon {
 
-  &:hover {
-    background-color: $color-purple;
-  }
-
 
   justify-content: space-between;
-  background: white;
+  background: transparent;
+
+  .nav-link {
+    color: white !important;
+  }
 
 
   .navbar-collapse {
@@ -23,7 +23,9 @@ $color-purple: $info;
 
 }
 
-
-.color-purple {
-  color: $color-purple;
+.navbar-lewagon-white {
+  background-color: white;
+  .nav-link {
+    color: black !important;
+  }
 }

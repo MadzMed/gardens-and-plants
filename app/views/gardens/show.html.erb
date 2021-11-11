@@ -2,19 +2,19 @@
 </div>
 
 <div class="container">
-  <ul>
-    <li>name: <%= @garden.name %></li>
-  </ul>
+  <h1 style="text-align: center;"><%= @garden.name %></h1>
+  <% @garden.plants.each do |plant| %>
+    <div class="card-category mt-4" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://media.istockphoto.com/photos/edelweiss-with-mountain-in-background-alps-picture-id824629116?b=1&k=20&m=824629116&s=170667a&w=0&h=iJ_31Cb6FegooFOZ6raWO5LFlsohQ0Iv34VY_eMWRz4=)">
+      <%= plant.name %><%= link_to 'X', garden_plant_path(@garden, plant), method: :delete %>
+    </div>
+  <% end %>
+
+  <%= simple_form_for([@garden ,@plant]) do |f| %>
+    <%= f.input :name, html: { autocomplete: 'off' }%>
+    <div style='display: flex; justify-content: center;'>
+      <%= f.submit 'add plant', class: "btn btn-success" %>
+    </div>
+  <% end %>
 </div>
 
-<% @garden.plants.each do |plant| %>
-  <div class="card-category mt-4" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://media.istockphoto.com/photos/edelweiss-with-mountain-in-background-alps-picture-id824629116?b=1&k=20&m=824629116&s=170667a&w=0&h=iJ_31Cb6FegooFOZ6raWO5LFlsohQ0Iv34VY_eMWRz4=)">
-    <%= plant.name %><%= link_to 'X', garden_plant_path(@garden, plant), method: :delete %>
-  </div>
-<% end %>
-
-<%= simple_form_for([@garden ,@plant]) do |f| %>
-  <%= f.input :name %>
-  <%= f.submit 'add plant' %>
-<% end %>
 
