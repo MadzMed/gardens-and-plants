@@ -1,8 +1,10 @@
 .card-tags {
-  position: absolute;
+  position: relative;
   bottom: 8px;
   left: 8px;
   width: 80%;
+  display: flex;
+  justify-content: center;
   span {
     background: $blue;
     font-size: .7em;

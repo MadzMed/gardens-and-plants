@@ -1,4 +1,9 @@
 class PlantsController < ApplicationController
+  def show
+    @plant = Plant.find(params[:id])
+    @tag = Tag.new
+  end
+
   def create
     @garden = Garden.find(params[:garden_id])
     @plant = Plant.new(plant_params)

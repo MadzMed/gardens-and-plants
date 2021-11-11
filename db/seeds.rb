@@ -49,3 +49,9 @@ Plant.create!(
 GardenPlant.create(garden: Garden.first, plant: Plant.first)
 GardenPlant.create(garden: Garden.second, plant: Plant.second)
 GardenPlant.create(garden: Garden.first, plant: Plant.third)
+
+
+tag_list = %w(exotique carnivore grasse)
+tag_list.each do |tag|
+  Tag.create(name: tag)
+end
