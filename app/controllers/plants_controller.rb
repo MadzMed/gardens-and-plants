@@ -1,5 +1,4 @@
 class PlantsController < ApplicationController
-
   def create
     @garden = Garden.find(params[:garden_id])
     @plant = Plant.new(plant_params)
